@@ -41,7 +41,7 @@ public class TourOperatorApplication implements CommandLineRunner {
 		tourPackageService.createTourPackage("SC", "Snowboard Cali");
 		tourPackageService.createTourPackage("TC", "Taste of California");
 
-		System.out.println("Number of tours packages =" + tourPackageService.total());
+		System.out.println("Number of tours packages = " + tourPackageService.total());
 
 		TourFromFile.importTours().forEach(t -> tourService.createTour(
 				t.title,

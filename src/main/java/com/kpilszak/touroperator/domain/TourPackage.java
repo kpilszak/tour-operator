@@ -1,10 +1,12 @@
 package com.kpilszak.touroperator.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
 public class TourPackage implements Serializable {
     @Id
     private String code;
