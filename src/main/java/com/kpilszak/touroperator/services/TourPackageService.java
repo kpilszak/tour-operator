@@ -16,7 +16,7 @@ public class TourPackageService {
 
     public TourPackage createTourPackage(String code, String name) {
         if (!tourPackageRepository.existsById(code)) {
-            tourPackageRepository.save(new TourPackage(code, name));
+            return tourPackageRepository.save(new TourPackage(code, name));
         }
         return null;
     }

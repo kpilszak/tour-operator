@@ -9,8 +9,6 @@ import com.kpilszak.touroperator.repo.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class TourService {
     private TourPackageRepository tourPackageRepository;
@@ -24,12 +22,10 @@ public class TourService {
 
     public Tour createTour(String title, String description, String blurb, Integer price, String duration, String bullets,
                            String keywords, String tourPackageName, Difficulty difficulty, Region region) {
-        Optional<TourPackage> tourPackage = tourPackageRepository.findByName(tourPackageName);
-        if (!tourPackage.isPresent()) {
-            throw new RuntimeException("Tour package does not exist: " + tourPackageName);
-        }
-
-        return tourRepository.save(new Tour(title, description, blurb, price, duration, bullets, keywords, tourPackage.get(),
+        TourPackage tourPackage = tourPackageRepository.findByName(tourPackageName).orElseThrow(() ->
+            new RuntimeException("Tour package does not exist: " + tourPackageName)
+        );
+        return tourRepository.save(new Tour(title, description, blurb, price, duration, bullets, keywords, tourPackage,
                 difficulty, region));
     }
 
