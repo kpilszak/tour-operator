@@ -16,7 +16,7 @@ Project is created with:
 * Java 8
 * Spring Boot 2.3.2.  
 * MongoDB
-* Maven
+* Maven  
 IDE: Intellij IDEA 2020
 
 ## Setup
