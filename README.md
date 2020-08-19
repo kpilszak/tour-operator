@@ -14,6 +14,7 @@ The main purpose is to create tour operator web application.
 Project is created with:
 * Java 8
 * Spring Boot 2.3.2.  
+* MongoDB
 IDE: Intellij IDEA 2020
 
 ## Setup
