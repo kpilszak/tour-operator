@@ -21,7 +21,7 @@ import static com.fasterxml.jackson.annotation.PropertyAccessor.FIELD;
 @SpringBootApplication
 public class TourOperatorApplication implements CommandLineRunner {
 
-	@Value("/TourOperator.json")
+	@Value("${importfile}")
 	private String importFile;
 
 	@Autowired
